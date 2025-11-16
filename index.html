@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+
+        .authors {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .venue {
+            font-size: 1em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .links {
+            margin-top: 25px;
+        }
+
+        .links a {
+            display: inline-block;
+            padding: 10px 25px;
+            margin: 5px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .links a:hover {
+            background-color: #2980b9;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .abstract {
+            text-align: justify;
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #444;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+        }
+
+        .figure {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .figure-caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 2px solid #eee;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning</h1>
+            <p class="authors">Anonymous Authors</p>
+            <p class="venue">Under review as a conference paper at ICLR 2026</p>
+            <div class="links">
+                <a href="paper/5792_MedGMAE_Gaussian_Masked_A.pdf" target="_blank">📄 Paper (PDF)</a>
+            </div>
+        </header>
+
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <div class="abstract">
+                <p>
+                    Self-supervised pre-training has emerged as a critical paradigm for learning transferable representations from unlabeled medical volumetric data. Masked autoencoder based methods have garnered significant attention, yet their application to volumetric medical image faces fundamental limitations from the discrete voxel-level reconstruction objective, which neglects comprehensive anatomical structure continuity. To address this challenge, We propose MedGMAE, a novel framework that replaces traditional voxel reconstruction with 3D Gaussian primitives reconstruction as new perspectives on representation learning. Our approach learns to predict complete sets of 3D Gaussian parameters as semantic abstractions to represent the entire 3D volume, from sparse visible image patches. MedGMAE demonstrates dual utility across medical imaging applications. For representation learning, sparse Gaussian prediction produces superior encoder representations that outperform traditional MAE baselines on downstream segmentation, classification, and registration tasks. For volumetric reconstruction, the Gaussian decoder leverages pretrained anatomical priors to accelerate 3D CT volume reconstruction convergence. Extensive experiments across multiple medical imaging datasets demonstrate that our approach achieves superior performance, establishing a new framework for medical image pre-training. Code will be released soon.
+                </p>
+            </div>
+        </section>
+
+        <section id="figures">
+            <h2>Overview</h2>
+
+            <div class="figure">
+                <img src="paper/Fig1.png" alt="MedGMAE Overview">
+                <p class="figure-caption">
+                    <strong>Figure 1: MedGMAE overview.</strong> (a) our MedGMAE pre-training with 3D Gaussian Splatting reconstruction leverages CT volume sparsity to achieve 99.25% parameter reduction and superior coherence compared to voxel-based MIM methods. (b) Pre-trained encoder fine-tuning for downstream tasks: segmentation, registration, and classification. (c) Zero-shot capability for 3DGR-based CT reconstruction with 1.39× speed-up.
+                </p>
+            </div>
+
+            <div class="figure">
+                <img src="paper/Fig2.png" alt="MedGMAE Architecture">
+                <p class="figure-caption">
+                    <strong>Figure 2: MedGMAE architecture.</strong> (a) MedGMAE pre-training framework that processes patchified and masked input through an encoder-decoder architecture to predict 3D Gaussian parameters, which are then rendered and optimized via reconstruction loss. (b) Extended MedGMAE* with multi-level residual blocks for progressive Gaussian parameters refinement.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <p>This is an anonymous submission for peer review. Full code and pretrained models will be released upon acceptance.</p>
+        </footer>
+    </div>
+</body>
+</html>

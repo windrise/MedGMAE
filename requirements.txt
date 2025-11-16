@@ -1,0 +1,41 @@
+# Core Deep Learning Frameworks
+torch>=2.0.1
+torchvision>=0.15.2
+torchaudio>=2.0.2
+
+# Vision Transformer and Timm
+timm==0.4.12
+
+# Medical Image Processing
+monai>=1.2.0
+nibabel>=3.2.1
+simpleitk>=2.3.1
+pydicom>=2.3.1
+
+# Gaussian Splatting Dependencies
+# Note: These packages require CUDA compilation
+# simple-knn  # Install separately with: pip install git+https://github.com/camenduru/simple-knn.git
+# diff-gaussian-rasterization  # Install separately if needed
+
+# Scientific Computing
+numpy>=1.24.2
+scipy>=1.10.0
+scikit-learn>=1.2.0
+
+# Visualization
+matplotlib>=3.7.4
+seaborn>=0.12.0
+plyfile>=1.0.3
+
+# Experiment Tracking
+wandb>=0.16.1
+
+# Utilities
+tqdm>=4.65.0
+einops>=0.6.0
+pyyaml>=6.0
+
+# Development Tools (Optional)
+# pytest>=7.3.0
+# black>=23.0.0
+# flake8>=6.0.0
