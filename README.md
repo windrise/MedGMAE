@@ -90,7 +90,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun \
   --batch_size 4 \
   --epochs 2000 \
   --mask_ratio 0.75 \
-  --run_name "medgmae_hierarchical"
+  --run_name "medgmae"
 ```
 
 ### Key Training Parameters
